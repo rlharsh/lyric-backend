@@ -21,6 +21,11 @@ exports.handler = async (event, context) => {
 
     return {
       statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*', // Update this to restrict the allowed origins if needed
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Methods': 'POST',
+      },
       body: JSON.stringify(response.data.choices[0].message)
     };
   } catch (error) {
