@@ -17,10 +17,6 @@ exports.handler = async (event, context) => {
     return { statusCode: 204, headers };
   }
 
-  if (event.httpMethod !== "POST") {
-    return { statusCode: 405, body: "Method Not Allowed", headers };
-  }
-
   const messages = JSON.parse(event.body).messages;
 
   try {
