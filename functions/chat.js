@@ -38,7 +38,7 @@ exports.handler = async (event, context) => {
     return {
       statusCode: 500,
       headers,
-      body: JSON.stringify({ error: `Error processing ChatGPT API request ${messages}` })
+      body: JSON.stringify({ error: `Error processing ChatGPT API request: ${messages}` })
     };
   }
 };
